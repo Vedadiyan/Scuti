@@ -72,7 +72,8 @@ namespace Scuti.Lexicon
             ["in"] = Keywords.IN,
             ["try"] = Keywords.TRY,
             ["catch"] = Keywords.CATCH,
-            ["throw"] = Keywords.THROW
+            ["throw"] = Keywords.THROW,
+            ["finally"] = Keywords.FINALLY
         };
     }
 }

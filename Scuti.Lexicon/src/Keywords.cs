@@ -49,6 +49,8 @@ namespace Scuti.Lexicon
         CATCH
         = 220,
         THROW
-        = 230
+        = 230,
+        FINALLY
+        = 240
     }
 }
