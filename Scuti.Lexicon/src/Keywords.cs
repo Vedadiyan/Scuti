@@ -4,8 +4,6 @@ namespace Scuti.Lexicon
     {
         DEFAULT
         = 0,
-        FUNC
-        = 10,
         FUNCTION
         = 10,
         IF
@@ -32,5 +30,17 @@ namespace Scuti.Lexicon
         = 120,
         TRUE 
         = 130,
+        IMPORT
+        = 140,
+        ASYNC
+        = 150,
+        AWAIT
+        = 160,
+        NEW
+        = 170,
+        OF
+        = 180,
+        IN
+        = 190
     }
 }

@@ -50,6 +50,7 @@ namespace Scuti.Lexicon
         public static Dictionary<string, Keywords> GetKeywords { get; } = new Dictionary<string, Keywords>
         {
             ["function"] = Keywords.FUNCTION,
+            ["func"] = Keywords.FUNCTION,
             ["return"] = Keywords.RETURN,
             ["if"] = Keywords.IF,
             ["elif"] = Keywords.ELSE_IF,
@@ -61,7 +62,13 @@ namespace Scuti.Lexicon
             ["break"] = Keywords.BREAK,
             ["true"] = Keywords.TRUE,
             ["false"] = Keywords.FALSE,
-            ["null"] = Keywords.NULL
+            ["null"] = Keywords.NULL,
+            ["import"] = Keywords.IMPORT,
+            ["async"] = Keywords.ASYNC,
+            ["await"] = Keywords.AWAIT,
+            ["new"] = Keywords.NEW,
+            ["of"] = Keywords.OF,
+            ["in"] = Keywords.IN
         };
     }
 }
