@@ -47,8 +47,8 @@ namespace Scuti.Lexicon
         #region Flags 
         SINGLE_QUOT
         = 4000,
-        DOUBLE_QUOT
-        = 4000,
+        // DOUBLE_QUOT
+        // = 4000,
         #endregion
 
         #region Arithmetics    
