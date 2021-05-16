@@ -18,6 +18,7 @@ namespace Scuti.Lexicon
             ['['] = Tokens.LEFT_B,
             [']'] = Tokens.RIGHT_B,
 
+            ['"'] = Tokens.DOUBLE_QUOT,
             ['\''] = Tokens.SINGLE_QUOT,
 
             ['+'] = Tokens.PLUS,
