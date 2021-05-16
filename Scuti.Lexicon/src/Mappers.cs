@@ -66,9 +66,13 @@ namespace Scuti.Lexicon
             ["import"] = Keywords.IMPORT,
             ["async"] = Keywords.ASYNC,
             ["await"] = Keywords.AWAIT,
+            ["sneak"] = Keywords.SNEAK,
             ["new"] = Keywords.NEW,
             ["of"] = Keywords.OF,
-            ["in"] = Keywords.IN
+            ["in"] = Keywords.IN,
+            ["try"] = Keywords.TRY,
+            ["catch"] = Keywords.CATCH,
+            ["throw"] = Keywords.THROW
         };
     }
 }

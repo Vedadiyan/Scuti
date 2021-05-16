@@ -41,6 +41,14 @@ namespace Scuti.Lexicon
         OF
         = 180,
         IN
-        = 190
+        = 190,
+        SNEAK 
+        = 200,
+        TRY
+        = 210,
+        CATCH
+        = 220,
+        THROW
+        = 230
     }
 }

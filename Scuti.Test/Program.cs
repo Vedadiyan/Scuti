@@ -11,12 +11,24 @@ namespace Scuti.Test
         import Test;
         @export
         func sum(a,b) {
-            return a + b;
+            try {
+                return a + b;
+            }
+            catch($error) {
+                throw error;
+            }
         }
 
+        @singleton
+        func const_value() => sum(1000,2000);
+
+        func short_function(a,b) => a * b;
+        
         func run() {
             $sum_task = new async sum(1,2);
-            $sum_result = await sum_task;
+            if(sneak sum_task == 0) {
+                $sum_result = await sum_task;
+            }
             $inner_function = () => {
                 return true;
             };
@@ -28,7 +40,7 @@ namespace Scuti.Test
 
             }
             for($value of array_example) {
-                
+
             }
         }
 
