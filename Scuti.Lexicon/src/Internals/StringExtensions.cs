@@ -19,7 +19,7 @@ namespace Scuti.Lexicon.Internals
                         {
                             buffer.Append(str[i]);
                         }
-                        yield return buffer.ToString();
+                        yield return buffer.ToString().ToCharArray();
                         buffer.Clear();
                     }
                     else if (token == Tokens.HASH)
@@ -39,16 +39,8 @@ namespace Scuti.Lexicon.Internals
                             }
                             else
                             {
-                                switch (tmp.ParseValue(out object value))
-                                {
-                                    case Types.REFERENCE:
-                                        yield return "";
-                                        break;
-                                    case Types.DECIMAL:
-                                    case Types.INT:
-                                        yield return value;
-                                        break;
-                                }
+                                tmp.ParseValue(out object value);
+                                yield return value;
                             }
                         }
                         if (token > 0)
@@ -98,7 +90,8 @@ namespace Scuti.Lexicon.Internals
                 value = decimal.Parse(str);
                 return Types.DECIMAL;
             }
-            else {
+            else
+            {
                 value = int.Parse(str);
                 return Types.INT;
             }
