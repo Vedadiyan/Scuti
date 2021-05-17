@@ -25,10 +25,13 @@ namespace Scuti.Test
         func short_function(a,b) => a * b;
         
         func run() {
+            $task_example = new sum(1,2);
+            $lock_example = new sync sum(1,2);
             $sum_task = new async sum(1,2);
             if(sneak sum_task == 0) {
                 $sum_result = await sum_task;
             }
+            delete sum_task;
             $inner_function = () => {
                 return true;
             };
