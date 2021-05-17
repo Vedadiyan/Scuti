@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Linq;
+using Scuti.ASP.Internals;
 namespace Scuti.Test
 {
     class Program
@@ -59,7 +60,7 @@ namespace Scuti.Test
         }
 "
             );
-            var test = parser.Parse();
+            var test = parser.Parse().Classify().ToArray();
             Console.WriteLine("Hello World!");
         }
     }

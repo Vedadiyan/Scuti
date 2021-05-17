@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../Scuti.Lexicon/Scuti.Lexicon.csproj" />
+    <ProjectReference Include="../Scuti.AST/Scuti.AST.csproj" />
   </ItemGroup>
 
 </Project>
