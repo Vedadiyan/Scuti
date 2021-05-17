@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Scuti.ASP.Internals;
+using Scuti.AST.Internals;
 namespace Scuti.Test
 {
     class Program

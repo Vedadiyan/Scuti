@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Scuti.Lexicon;
 
-namespace Scuti.ASP.Internals
+namespace Scuti.AST.Internals
 {
     public static class ObjectArrayExtensions
     {
-        public static IEnumerable<object[]> Classify(this object[] input)
+        public static IEnumerable<object> Classify(this object[] input)
         {
             List<object> buffer = new List<object>();
             for (int i = 0; i < input.Length; i++)
@@ -15,10 +15,10 @@ namespace Scuti.ASP.Internals
                     switch (keyword)
                     {
                         case Keywords.FUNCTION:
-                            yield return input.readFunction(ref i);
+                            yield return new Function(input.readFunction(ref i));
                             break;
                         case Keywords.IMPORT:
-                            yield return input.readImport(ref i);
+                            yield return new Import(input.readImport(ref i));
                             break;
                     }
                 }
