@@ -60,7 +60,14 @@ namespace Scuti.ASP.Internals
                             }
                             else if (token == Tokens.EQUALS)
                             {
+                                if (!(input[offset + 1] is Tokens && token == Tokens.GREATER_THAN))
+                                {
+                                    throw new System.Exception("Invalid short function definition exception");
+                                }
                                 function_type = 2;
+                            }
+                            else {
+                                throw new System.Exception("Invalid function definition exception");
                             }
                         }
                         else if (function_type == 1 && token == Tokens.LEFT_CB)
