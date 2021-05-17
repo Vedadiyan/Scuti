@@ -17,17 +17,60 @@ namespace Scuti.ASP.Internals
                         case Keywords.FUNCTION:
                             yield return input.readFunction(ref i);
                             break;
+                        case Keywords.IMPORT:
+                            yield return input.readImport(ref i);
+                            break;
+                    }
+                }
+                else if(input[i] is Tokens token) {
+                    switch(token) {
+                        case Tokens.AT_SIGN:
+                            yield return input.readAttribute(ref i);
+                            break;
                     }
                 }
             }
+        }
+        private static object[] readImport(this object[] input, ref int offset)
+        {
+            List<object> import = new List<object>();
+            for (; offset < input.Length; offset++)
+            {
+                if (input[offset] is Tokens token && token == Tokens.SEMICOLON)
+                {
+                    break;
+                }
+                import.Add(input[offset]);
+            }
+            return import.ToArray();
+        }
+        private static object[] readAttribute(this object[] input, ref int offset)
+        {
+            List<object> import = new List<object>();
+            import.Add(input[offset++]);
+            for (; offset < input.Length; offset++)
+            {
+                if (input[offset] is Keywords || (input[offset] is Tokens token && token == Tokens.AT_SIGN))
+                {
+                    offset--;
+                    break;
+                }
+                import.Add(input[offset]);
+            }
+            var ttt = input[offset];
+            return import.ToArray();
         }
         private static object[] readFunction(this object[] input, ref int offset)
         {
             List<object> function = new List<object>();
             int parameters_validator = 0;
             int function_type = -1;
-            for (int i = -1; offset < input.Length && i != 0; offset++)
+            for (int i = -1; offset < input.Length; offset++)
             {
+                if(i == 0) {
+                    offset--;
+                    break;
+                }
                 if (input[offset] is Tokens token)
                 {
                     if (parameters_validator != -1)
@@ -66,7 +109,8 @@ namespace Scuti.ASP.Internals
                                 }
                                 function_type = 2;
                             }
-                            else {
+                            else
+                            {
                                 throw new System.Exception("Invalid function definition exception");
                             }
                         }
@@ -86,7 +130,6 @@ namespace Scuti.ASP.Internals
                 }
                 function.Add(input[offset]);
             }
-            // var test = input[offset];
             return function.ToArray();
         }
     }

@@ -60,6 +60,7 @@ namespace Scuti.Test
         }
 "
             );
+            var zzz = parser.Parse();
             var test = parser.Parse().Classify().ToArray();
             Console.WriteLine("Hello World!");
         }
