@@ -60,7 +60,7 @@ namespace Scuti.ASP.Internals
                             }
                             else if (token == Tokens.EQUALS)
                             {
-                                if (!(input[offset + 1] is Tokens && token == Tokens.GREATER_THAN))
+                                if (!(input[offset + 1] is Tokens _token && _token == Tokens.GREATER_THAN))
                                 {
                                     throw new System.Exception("Invalid short function definition exception");
                                 }
