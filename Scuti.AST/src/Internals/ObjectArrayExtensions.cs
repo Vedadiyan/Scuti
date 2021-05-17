@@ -8,7 +8,7 @@ namespace Scuti.ASP.Internals
         public static IEnumerable<object[]> Classify(this object[] input)
         {
             List<object> buffer = new List<object>();
-            for (int i = 0, c = -1; i < input.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
                 if (input[i] is Keywords keyword)
                 {
