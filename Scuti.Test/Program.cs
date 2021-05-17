@@ -12,6 +12,7 @@ namespace Scuti.Test
         import Test;
         @export
         func sum(a,b) {
+            $test = null;
             try {
                 return a + b;
             }

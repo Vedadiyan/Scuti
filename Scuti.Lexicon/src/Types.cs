@@ -13,6 +13,9 @@ namespace Scuti.Lexicon
         BOOLEAN
         = 40,
         REFERENCE
-        = 50
+        = 50,
+
+        ANY
+        = 60
     }
 }

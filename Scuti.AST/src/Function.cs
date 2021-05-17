@@ -2,9 +2,11 @@ using Scuti.Lexicon;
 
 namespace Scuti.AST {
     public readonly struct Function {
-        private readonly object[] lexi;
-        public Function(object[] lexi) {
-            this.lexi = lexi;
+        private readonly object[] function;
+        private readonly object[] attributes;
+        public Function(object[] function, object[] attributes) {
+           this.function = function;
+           this.attributes = attributes;
         }
     }
 }

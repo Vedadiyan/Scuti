@@ -5,7 +5,7 @@ namespace Scuti.AST.Internals
 {
     public static class ObjectArrayExtensions
     {
-        public static IEnumerable<object> Classify(this object[] input)
+        public static object[] Classify(this object[] input)
         {
             List<object> buffer = new List<object>();
             for (int i = 0; i < input.Length; i++)
@@ -15,21 +15,34 @@ namespace Scuti.AST.Internals
                     switch (keyword)
                     {
                         case Keywords.FUNCTION:
-                            yield return new Function(input.readFunction(ref i));
+                            buffer.Add(new Function(input.readFunction(ref i), buffer.getAttributes()));
                             break;
                         case Keywords.IMPORT:
-                            yield return new Import(input.readImport(ref i));
+                            buffer.Add(new Import(input.readImport(ref i)));
                             break;
                     }
                 }
                 else if(input[i] is Tokens token) {
                     switch(token) {
                         case Tokens.AT_SIGN:
-                            yield return input.readAttribute(ref i);
+                            buffer.Add(input.readAttribute(ref i));
                             break;
                     }
                 }
             }
+            return buffer.ToArray();
+        }
+        private static object[] getAttributes(this List<object> input) {
+            List<object> buffer = new List<object>();
+            for(int i = input.Count - 1; i >= 0; i--) {
+                if(!(input[i] is object[])) {
+                    break;
+                }
+                buffer.Add(input[i]);
+                input.RemoveAt(i);
+            }
+            buffer.Reverse();
+            return buffer.ToArray();
         }
         private static object[] readImport(this object[] input, ref int offset)
         {
