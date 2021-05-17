@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuti.Lexicon", "Scuti.Lexi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuti.Test", "Scuti.Test\Scuti.Test.csproj", "{514F526F-A589-4D59-A638-5D7FAF005952}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scuti.AST", "Scuti.AST\Scuti.AST.csproj", "{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{514F526F-A589-4D59-A638-5D7FAF005952}.Release|x64.Build.0 = Release|Any CPU
 		{514F526F-A589-4D59-A638-5D7FAF005952}.Release|x86.ActiveCfg = Release|Any CPU
 		{514F526F-A589-4D59-A638-5D7FAF005952}.Release|x86.Build.0 = Release|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Debug|x64.Build.0 = Debug|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Debug|x86.Build.0 = Debug|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Release|x64.ActiveCfg = Release|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Release|x64.Build.0 = Release|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Release|x86.ActiveCfg = Release|Any CPU
+		{F97089A0-3FC6-4DFF-AC24-F9F57DFCEB4F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

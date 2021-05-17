@@ -73,7 +73,9 @@ namespace Scuti.Lexicon
             ["try"] = Keywords.TRY,
             ["catch"] = Keywords.CATCH,
             ["throw"] = Keywords.THROW,
-            ["finally"] = Keywords.FINALLY
+            ["finally"] = Keywords.FINALLY,
+            ["delete"] = Keywords.DELETE,
+            ["sync"] = Keywords.SYNC
         };
     }
 }

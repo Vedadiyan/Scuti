@@ -1,6 +1,6 @@
 namespace Scuti.Lexicon
 {
-    public enum Keywords : byte
+    public enum Keywords : int
     {
         DEFAULT
         = 0,
@@ -51,6 +51,10 @@ namespace Scuti.Lexicon
         THROW
         = 230,
         FINALLY
-        = 240
+        = 240,
+        DELETE
+        = 250,
+        SYNC
+        = 260
     }
 }
