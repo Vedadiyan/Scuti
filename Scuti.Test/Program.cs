@@ -46,7 +46,7 @@ namespace Scuti.Test
 
         @entry_point
         func test (a, b, c) {
-            $var = 25;
+            $var = 25.6;
             if(a == b) {
                 return true;
             }

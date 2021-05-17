@@ -63,29 +63,22 @@ namespace Scuti.Lexicon.Internals
             }
             if (buffer.Length > 0)
             {
+                // Replace these with proper exceptions
                 throw new System.Exception("Invalid Syntax");
             }
         }
         public static Types ParseValue(this string str, out object value)
         {
-            bool isDecimal = false;
-            foreach (var c in str)
-            {
-                if (!char.IsDigit(c))
-                {
-                    if (c != '.')
-                    {
-                        value = str;
-                        return Types.REFERENCE;
-                    }
-                    else
-                    {
-                        isDecimal = true;
-                        break;
-                    }
-                }
+            if(str.Length == 0) {
+                // Replace these with proper exceptions
+                throw new System.Exception("Invalid Syntax");
             }
-            if (isDecimal)
+            if (!char.IsDigit(str[str.Length - 1]))
+            {
+                value = str;
+                return Types.REFERENCE;
+            }
+            if (str.Contains('.'))
             {
                 value = decimal.Parse(str);
                 return Types.DECIMAL;
